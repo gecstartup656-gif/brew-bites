@@ -1,0 +1,1 @@
+- [Workspace package installation](package-installation.md) — target the artifact package explicitly when adding app-only dependencies.
