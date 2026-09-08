@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "The Brew Bits"
+description = "An offline-first cafe billing and POS web app for fast counter service, local menu management, daily reports, and printable receipts without relying on cloud services."
+version = "1.0.0"
+id = "artifacts/brew-bits"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19639
+
+[services.development]
+run = "pnpm --filter @workspace/brew-bits run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/brew-bits", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/brew-bits/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19639"
+BASE_PATH = "/"

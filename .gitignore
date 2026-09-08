@@ -49,7 +49,12 @@ Thumbs.db
 .local/
 # Build files
 release/
-artifacts/
+# `artifacts/` contains the editable workspace packages. Ignore only their
+# generated desktop output, not the application source.
+artifacts/*/release/
+artifacts/*/dist/
+artifacts/*/desktop-tools/*
+!artifacts/*/desktop-tools/pnpm.cmd
 
 # Electron build output
 dist/
