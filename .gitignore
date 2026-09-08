@@ -47,3 +47,20 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+# Build files
+release/
+artifacts/
+
+# Electron build output
+dist/
+out/
+
+# Node modules
+node_modules/
+
+# Temporary files
+*.tmp
+
+# Windows files
+Thumbs.db
+Desktop.ini
